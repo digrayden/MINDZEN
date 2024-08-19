@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="loader">
+    <div class="loader" id="scroll">
         <div class="loader__title">
             <object type="image/svg+xml" data="./img/logo.svg" class="loader__logo-object"></object>
         </div>
@@ -305,6 +305,7 @@
                         </div>
                     </div>
                     <div id="test-story" class="test__story">
+                        <p class="test__description" id="question-counter"></p>
                         <h3 class="test__quation" id="story"></h3>
                         <div id="choices" class="test__choices"></div>
                         <audio controls id="transition-sound" src="./audio/meditation.mp3" class="test__audio"></audio>

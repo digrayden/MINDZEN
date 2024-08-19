@@ -134,6 +134,7 @@ const quizContainer = document.getElementById('test-story');
 const storyElement = document.getElementById('story');
 const choicesContainer = document.getElementById('choices');
 const transitionSound = document.getElementById('transition-sound');
+const questionCounter = document.getElementById('question-counter');
 
 function startTest() {
     document.getElementById('intro-container').style.display = 'none';
@@ -152,6 +153,8 @@ function showQuestion(index) {
     storyElement.innerText = item.question;
     choicesContainer.innerHTML = '';
 
+    questionCounter.innerText = `Вопрос ${index + 1} из ${quizData.length}`;
+    
     item.options.forEach((option, optIndex) => {
         const optionButton = document.createElement('p');
         optionButton.classList.add('button_answer');
@@ -180,7 +183,7 @@ function calculateResult() {
     document.getElementById('test-story').style.display = 'none';
     document.getElementById('test-result').style.display = 'flex';
     document.getElementById('result').innerText = results[resultIndex].text;
-    document.getElementById('result').innerHTML += results[resultIndex].recommendations.map(rec => `<li>${rec}</li>`).join('');
+    document.getElementById('result').innerHTML += results[resultIndex].recommendations.map(rec => `<li><strong>${rec.split(':')[0]}</strong>: ${rec.split(':')[1]}</li>`).join('');
     
     transitionSound.pause();
     transitionSound.style.display = 'none';
@@ -208,15 +211,12 @@ const closeModalButtons = [
     "close-modal-btn-6"
 ];
 
-function getScrollbarWidth() {
-    return window.innerWidth - document.documentElement.clientWidth;
-}
 
 openModalButtons.forEach(({ btn, modal }) => {
     document.getElementById(btn).addEventListener("click", () => {
         document.getElementById(modal).classList.add("open");
         document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = `${getScrollbarWidth()}px`;
+        document.body.style.paddingRight = `17px`;
     });
 });
 
