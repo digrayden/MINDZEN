@@ -5,7 +5,6 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel="stylesheet" href="./css/style.css">
-
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon_package_v0.16/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon_package_v0.16/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon_package_v0.16/favicon-16x16.png">
@@ -17,18 +16,19 @@
 </head>
 
 <body>
-    <div class="gradient">
-        <div class="loader">
-            <div class="loader__title">
-                <object type="image/svg+xml" data="./img/logo.svg" class="loader__logo-object"></object>
-            </div>
-            <div class="loader__item loader__item-1"></div>
-            <div class="loader__item loader__item-1"></div>
-            <div class="loader__item loader__item-1"></div>
+    <div class="loader">
+        <div class="loader__title">
+            <object type="image/svg+xml" data="./img/logo.svg" class="loader__logo-object"></object>
         </div>
-        <header class="header">
+        <div class="loader__item loader__item-1"></div>
+        <div class="loader__item loader__item-1"></div>
+        <div class="loader__item loader__item-1"></div>
+    </div>
+    <div class="gradient">        
+        <header class="header" id="header">
             <div class="wrapper header__wrapper">
                 <button class="burger">
+                    <span class="burger-line"></span>
                     <span class="burger-line"></span>
                     <span class="burger-line"></span>
                 </button>
@@ -95,7 +95,7 @@
         <section class="about-us" id="about">
             <div class="wrapper">
                 <h2 class="about-us__title">О нашем центре</h2>
-                <div class="layout-2-column contact-us-container">
+                <div class="layout-2-column about-us-container">
                     <p class="about-us__description">Команда психологов MINDZEN окажет Вам поддержку и
                         реальную помощь в сложных жизненных ситуациях. Здоровое психологическое и
                         ментальное состояние является главным аспектом для эффективной жизнедеятельности
@@ -104,27 +104,98 @@
                         социальной
                         сфере. Мы гарантируем Вам: профессиональную помощь, эффективное решение проблемы и
                         максимальное погружение в Вашу ситуацию</p>
-                    <div class="layout-3-column psychologists-container">
-                        <div class="psychologists block-shadowed">
-                            <div class="psychologists__content">
+                    <div class="layout-3-column psychologists-container" >
+                        <div class="psychologists block-shadowed" id="psychologists-1">
+                            <div class="psychologists__content" >
                                 <h5 class="psychologists__name">Татьяна</h5>
                                 <p class="psychologists__title">Практикующий психолог</p>
                             </div>
                             <img class="psychologists__photo" src="./img/psychologists/tatyana.png" alt="Татьяна">
                         </div>
-                        <div class="psychologists block-shadowed">
-                            <div class="psychologists__content">
+                        <div class="modal" id="modal-4">
+                            <div class="modal__box block-shadowed">
+                                <button class="modal__close-btn" id="close-modal-btn-4">
+                                    <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
+                                            fill="#333333" />
+                                        <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
+                                    </svg>
+                                </button>
+                                <h2 class="psychologists__name-modal">Татьяна</h2>
+                                <ul>
+                                    <li>Практикующий психолог</li>
+                                    <li>Индивидуальное консультирование, семейное консультирование, консультирование подростков (с 12 лет)</li>
+                                    <li>Методы работы: когнитивно-поведенческая терапия</li>
+                                    <li>Работаю с депрессией, тревожными расстройствами, паническими атаками, мотивационными запросами и пр.</li>
+                                    <li>Высшее образование - практический психолог (БГПУ; 2003 год)</li>
+                                    <li>Аспирантура - психология личности (2007 год)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="psychologists block-shadowed" id="psychologists-2">
+                            <div class="psychologists__content" >
                                 <h5 class="psychologists__name">Денис</h5>
                                 <p class="psychologists__title">Практикующий психолог</p>
                             </div>
                             <img class="psychologists__photo" src="./img/psychologists/denis.png" alt="Денис">
                         </div>
-                        <div class="psychologists block-shadowed">
+                        <div class="modal" id="modal-5">
+                            <div class="modal__box block-shadowed">
+                                <button class="modal__close-btn" id="close-modal-btn-5">
+                                    <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
+                                            fill="#333333" />
+                                        <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
+                                    </svg>
+                                </button>
+                                <h2 class="psychologists__name-modal">Денис</h2>
+                                <ul>
+                                    <li>Практикующий психолог</li>
+                                    <li>Методы работы: основное направление - КПТ (когнитивно-поведенческая терапия)</li>
+                                    <li>Работаю с: депрессией, тревожными расстройствами: ОКР (обсессивно-компульсивное расстройство), паническое расстройство (панические атаки), ГТР (генерализованное тревожное расстройство),                                    
+                                    тревога о здоровье, социальная фобия, кризисы и травмы (в личной жизни/семье, с детьми/коллегами), измены, развод, преодоление конфликтных ситуаций в семье, на работе и т.д.</li>
+                                    <li>Тревожное ожидание сексуальной неудачи, низкая самооценка, детско-родительские отношения, работа с созависимостью, психосоматические расстройства</li>
+                                    <li>Высшее психологическое образование - Психолог, преподаватель психологии</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="psychologists block-shadowed" id="psychologists-3">
                             <div class="psychologists__content">
                                 <h5 class="psychologists__name">Виктория</h5>
                                 <p class="psychologists__title">Практикующий психолог</p>
                             </div>
                             <img class="psychologists__photo" src="./img/psychologists/victory.png" alt="Виктория">
+                        </div>
+                        <div class="modal" id="modal-6">
+                            <div class="modal__box block-shadowed">
+                                <button class="modal__close-btn" id="close-modal-btn-6">
+                                    <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
+                                            fill="#333333" />
+                                        <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
+                                    </svg>
+                                </button>
+                                <h2 class="psychologists__name-modal">Виктория</h2>
+                                <ul>
+                                    <li>Практикующий психолог</li>
+                                    <li>Индивидуальное консультирование лиц с 18 лет</li>
+                                    <li>Семейная терапия</li>
+                                    <li>Методы работы: когнитивно-поведенческая терапия, схема-терапия</li>
+                                    <li>Работаю с тревожными расстройствами, депрессией, навязчивыми мыслями, неуверенностью в себе,                                    
+                                    расстройствами личности, социальной фобией, повышенной эмоциональностью и др.</li>
+                                    <li>Помогаю поверить в себя и обрести уверенность</li>
+                                    <li>Высшее психолого-педагогическое образование (БГПУ, 2019)</li>
+                                    <li>Магистр психологии (БГПУ, 2020)</li>
+                                    <li>Основы когнитивно-поведенческого подхода в психотерапии (Минский центр КПТ и майндфулнесс, 2020-2022)</li>
+                                    <li>Эриксоновский гипноз (Минский тренинговый центр, 2020)</li>
+                                    <li>Практики осознанности в психотерапии: методические основы ведения тренинга (Общество когнитивно-поведенческой терапии, 2020)</li>
+                                    <li>Индивидуальная схема-терапия (Балтийский институт схема-терапии, 2022)</li>
+                                    <li>КПТ в работе с расстройством личности (Минский центр КПТ и майндфулнесс, 2022)</li>
+                                    <li>Базовый курс «Мотивационное интервью» (Центр Контекстуальной Поведенческой терапии, 2023)</li>
+                                    <li>Член Белорусского общества психологов</li>
+                                    <li>Член Белорусского общества КПТ</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -133,35 +204,98 @@
         <section class="services" id="services">
             <div class="wrapper ">
                 <h2 class="services__title">Наши услуги</h2>
-                <div class="layout-3-column service-wrapper">
-                    <article class="service block-shadowed">
-                        <img class="service__image" src="./img/services/indiv.svg" alt="service">
+                <div class="layout-3-column services-wrapper">
+                    <div class="service block-shadowed">
+                        <div class="service__image"><img  src="./img/services/indiv.svg" alt="service"></div>
                         <div class="service__content">
                             <h3 class="service__name">Консультации</h3>
-                            <p class="service__description">Индивидуальная помощь и поддержка</p>
+                            <button class="button button_page-modal" id="open-modal-btn-konsyl">Подробнее</button>
                         </div>
-                    </article>
-                    <article class="service block-shadowed">
-                        <img class="service__image" src="./img/services/promo.svg" alt="service">
+                        
+                    </div>
+                    <div class="modal" id="modal-1">
+                        <div class="modal__box block-shadowed">
+                            <button class="modal__close-btn" id="close-modal-btn-1">
+                                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
+                                        fill="#333333" />
+                                    <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
+                                </svg>
+                            </button>
+                            <h2 class="service__name">Какие проблемы решаем:</h2>                    
+                            <ul class="service__our-services">
+                                <li>Низкая самооценка и неуверенное поведение</li>
+                                <li>Тревога в социальных ситуациях</li>
+                                <li>Навязчивые мысли и действия</li>
+                                <li>Разного рода страхи (управление авто, авиаперелёты и др.)</li>
+                                <li>Зависимое поведение</li>
+                                <li>Психологическая поддержка при тяжёлых душевных проблемах</li>
+                                <li>Эмоциональная и физическая саморегуляция</li>
+                                <li>Ситуация сложного жизненного выбора</li>
+                                <li>Ситуация тяжёлой утраты близкого</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service block-shadowed">
+                        <div class="service__image"><img src="./img/services/promo.svg" alt="service"></div>
                         <div class="service__content">
                             <h3 class="service__name">Терапия</h3>
-                            <p class="service__description">Групповые и индивидуальные сеансы терапии</p>
+                            <button class="button button_page-modal" id="open-modal-btn-terapy">Подробнее</button>
                         </div>
-                    </article>
-                    <article class="service block-shadowed">
-                        <img class="service__image" src="./img/services/mind.svg" alt="service">
+                    </div>
+                    <div class="modal" id="modal-2">
+                        <div class="modal__box block-shadowed">
+                            <button class="modal__close-btn" id="close-modal-btn-2">
+                                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
+                                        fill="#333333" />
+                                    <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
+                                </svg>
+                            </button>
+                            <h2 class="service__name">С чем мы работаем:</h2>
+                            <ul class="service__our-services">
+                                <li> Семейная терапия </li>
+                                <li> Расстройство пищевого поведения </li>
+                                <li> Социофобия </li>
+                                <li> Тренинг по снижению тревожности «Я и другие» </li>
+                                <li> Тренинг самопознания для подростков </li>
+                                <li> Арт-терапия </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service block-shadowed">
+                        <div class="service__image"><img src="./img/services/mind.svg" alt="service"></div>
                         <div class="service__content">
                             <h3 class="service__name">Мастер-классы</h3>
-                            <p class="service__description">Обучающие семинары и тренинги</p>
+                            <button class="button button_page-modal" id="open-modal-btn-master">Подробнее</button>
                         </div>
-                    </article>
+                    </div>
+                    <div class="modal" id="modal-3">
+                        <div class="modal__box block-shadowed">
+                            <button class="modal__close-btn" id="close-modal-btn-3">
+                                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
+                                        fill="#333333" />
+                                    <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
+                                </svg>
+                            </button>
+                            <h2 class="service__name">Наши мастер-классы</h2>
+                            <ul class="service__our-services">
+                                <li>Мастер-класс "Лабиринт желаний: поиск своего "дикого" Я"</li>
+                                <li>Мастер-класс "Женщины которые любят слишком сильно"</li>
+                                <li>Мастер-класс "Твоя жизнь - твой выбор!"</li>
+                                <li>Мастер-класс "Чтение тела"</li>
+                                <li>Мастер-класс для родителей "Внутренний мир подростка"</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="psy-test" id="test">
             <div class="wrapper">
                 <h2 class="test__title">Психологический тест</h2>
-                <article class="test block-shadowed">
+                <div class="test block-shadowed">
                     <div class="test__intro" id="intro-container">
                         <p class="test__description">Попробуйте наш уникальный психологический тест, чтобы лучше понять
                             себя и получить
@@ -170,16 +304,17 @@
                             <button type="button" class="button button_test" id="button_start">Начать</button>
                         </div>
                     </div>
-                    <div id="test-story" class="test__story" style="display: none;">
-                        <h5 class="test__description" id="story"></h5>
+                    <div id="test-story" class="test__story">
+                        <h3 class="test__quation" id="story"></h3>
                         <div id="choices" class="test__choices"></div>
+                        <audio controls id="transition-sound" src="./audio/meditation.mp3" class="test__audio"></audio>
                     </div>
-                    <div id="test-result" class="test__result" style="display: none;">
+                    <div id="test-result" class="test__result">
                         <p class="test__description" id="result"></p>
                         <button type="button" class="button button_test"><a href="#contact">Записаться</a></button>
                     </div>
-                    <audio controls id="transition-sound" src="./audio/meditation.mp3" class="test__audio"></audio>
-                </article>
+                    
+                </div>
             </div>
         </section>
         <section class="contact-us" id="contact">
@@ -203,8 +338,8 @@
                     <div class="contact-us__form">
                         <form>
                             <div class="layout-2-column contact-us__line">
-                                <input type="text" name="name" id="name" placeholder="Ваше имя">
-                                <input type="tel" name="tel" id="tel" placeholder="Ваш номер телефона">
+                                <input type="text" class="input-field" name="name" id="name" placeholder="Ваше имя">
+                                <input type="tel" class="input-field" name="tel" id="tel" placeholder="Ваш номер телефона">
                             </div>
                             <textarea name="question" placeholder="Что вас беспокоит?"
                                 class="contact-us__line"></textarea>
@@ -218,10 +353,10 @@
         </section>
         <footer class="footer">
             <div class="wrapper footer__wrapper">
-                <a href="#" class="logo">
-                    <object type="image/svg+xml" data="./img/MINDZEN.svg" class="logo-object"></object>
+                <a href="#header" class="logo">
+                    <img type="image/svg+xml" src="./img/MINDZEN.svg" class="logo-object"></img>
                 </a>
-                <nav class="header__navigation">
+                <nav class="footer__navigation">
                     <ul class="navigation">
                         <li class="navigation__link"><a href="#about">О нас</a></li>
                         <li class="navigation__link"><a href="#services">Услуги</a></li>
@@ -230,18 +365,15 @@
                     </ul>
                 </nav>
                 <div class="footer__media">
-                    <a href="#" class="media">
-                        <object type="image/svg+xml" data="./img/icons/Vector.svg" class="media-object"></object>
+                    <a href="https://www.instagram.com/" class="media" target="_blank">
+                        <img type="image/svg+xml" src="./img/icons/Vector.svg" class="media-object"></img>
                     </a>
-                    <a href="#" class="media">
-                        <object type="image/svg+xml" data="./img/icons/akar-icons_facebook-fill.svg"
-                            class="media-object"></object>
+                    <a href="https://www.facebook.com/" class="media" target="_blank">
+                        <img type="image/svg+xml" src="./img/icons/akar-icons_facebook-fill.svg"
+                            class="media-object">
                     </a>
-
                 </div>
-
             </div>
-
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

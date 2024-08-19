@@ -1,3 +1,4 @@
+//Открытие бургер-меню
 let burger = document.querySelector(".burger");
 let nav = document.querySelector(".header__navigation");
 let headerLink = document.querySelector(".navigation");
@@ -11,6 +12,8 @@ headerLink.addEventListener("click", () => {
     burger.classList.remove("active");
 });
 
+
+//Тест
 const quizData = [
     {
         question: 'Ты чувствуешь тревогу. Что ты сделаешь, чтобы успокоиться?',
@@ -151,7 +154,7 @@ function showQuestion(index) {
 
     item.options.forEach((option, optIndex) => {
         const optionButton = document.createElement('p');
-        optionButton.classList.add('button_test');
+        optionButton.classList.add('button_answer');
         optionButton.innerText = option;
         optionButton.addEventListener('click',() => selectOption(index, optIndex));
         choicesContainer.appendChild(optionButton);
@@ -186,13 +189,87 @@ function calculateResult() {
 document.getElementById('button_start').addEventListener('click', startTest);
 
 
+// Модальное окно
+const openModalButtons = [
+    { btn: "open-modal-btn-konsyl", modal: "modal-1" },
+    { btn: "open-modal-btn-terapy", modal: "modal-2" },
+    { btn: "open-modal-btn-master", modal: "modal-3" },
+    { btn: "psychologists-1", modal: "modal-4" },
+    { btn: "psychologists-2", modal: "modal-5" },
+    { btn: "psychologists-3", modal: "modal-6" }
+];
 
-function validate1(ev) {
+const closeModalButtons = [
+    "close-modal-btn-1",
+    "close-modal-btn-2",
+    "close-modal-btn-3",
+    "close-modal-btn-4",
+    "close-modal-btn-5",
+    "close-modal-btn-6"
+];
+
+function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+}
+
+openModalButtons.forEach(({ btn, modal }) => {
+    document.getElementById(btn).addEventListener("click", () => {
+        document.getElementById(modal).classList.add("open");
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${getScrollbarWidth()}px`;
+    });
+});
+
+closeModalButtons.forEach((btn, index) => {
+    document.getElementById(btn).addEventListener("click", () => {
+        document.getElementById(`modal-${index + 1}`).classList.remove("open");
+        document.body.style.overflow = 'auto';
+        document.body.style.paddingRight = '0px';
+    });
+});
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        openModalButtons.forEach(({ modal }) => {
+            document.getElementById(modal).classList.remove("open");
+        });
+        document.body.style.overflow = 'auto';
+        document.body.style.paddingRight = '0px';
+    }
+});
+
+openModalButtons.forEach(({ modal }) => {
+    const modalElement = document.getElementById(modal);
+    modalElement.querySelector('.modal__box').addEventListener('click', event => {
+        event._isClickWithInModal = true;
+    });
+    modalElement.addEventListener('click', event => {
+        if (event._isClickWithInModal) return;
+        event.currentTarget.classList.remove('open');
+        document.body.style.overflow = 'auto';
+        document.body.style.paddingRight = '0px';
+    });
+});
+
+
+//Валидация формы
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (ev) => {
+        ev.preventDefault();
+        if (validate(ev)) {
+            alert("Форма успешно отправлена!");
+            form.reset();
+        }
+    });
+});
+
+function validate(ev) {
     const myForm = ev.currentTarget;
     myForm.querySelectorAll("span").forEach((el) => el.remove());
 
     const myName = isFullText(myForm.name);
-    const myTel = isCorrectTel(myForm.tel);
+    const myTel = isValidTel(myForm.tel);
 
     return myName && myTel;
 }
@@ -201,7 +278,7 @@ function isFullText(fieldInp) {
     if (fieldInp.value.trim().length === 0) {
         const elem = document.createElement("span");
         elem.textContent = "Поле должно быть заполнено!";
-        fieldInp.after(elem);
+        fieldInp.insertAdjacentElement("afterend", elem);
         fieldInp.classList.add("alert");
         return false;
     } else {
@@ -210,15 +287,21 @@ function isFullText(fieldInp) {
     }
 }
 
-window.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("form").addEventListener("submit", function (ev) {
-        if (!validate1(ev)) {
-            ev.preventDefault();
-        }
-    });
-});
+function isValidTel(fieldInp) {
+    if (!isFullText(fieldInp)) return false;
+    const regex = /^[\+\0-9]+$/;
+    if (!regex.test(fieldInp.value)) {
+        const elem = document.createElement("span");
+        elem.textContent = "Телефон может содержать только цифры!";
+        fieldInp.insertAdjacentElement("afterend", elem);
+        fieldInp.classList.add("alert");
+        return false;
+    }
+    fieldInp.classList.remove("alert");
+    return true;
+}
 
-
+//Анимация предзагрузчика
 gsap.registerPlugin(ScrollTrigger)
 const tlloader = gsap.timeline()
 
@@ -253,6 +336,7 @@ tlloader
         duration: 1,
     }, '-=0.2',)
 
+//Анимация скролла
 const tl = gsap.timeline()
 
 tl.fromTo('.promo__title', {
@@ -302,19 +386,6 @@ tl.fromTo('.promo__title', {
     duration: 1,
     stagger: 0.15,
 }, 7)
-
-/*gsap.to('.about-us__description', {
-    scrollTrigger: {
-        trigger: '.we-help',
-        start: '-80 top',
-        scrub: true,
-        opacity: 0,
-    },
-    scale: 1,
-    yPercent: 50,
-    opacity: 1,
-    duration: 1,
-})*/
 
 gsap.from('.help', {
     scrollTrigger: {
