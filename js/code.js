@@ -147,19 +147,18 @@ function startTest() {
 }
 
 function showQuestion(index) {
-
     const item = quizData[index];
 
     storyElement.innerText = item.question;
     choicesContainer.innerHTML = '';
 
     questionCounter.innerText = `Вопрос ${index + 1} из ${quizData.length}`;
-    
+
     item.options.forEach((option, optIndex) => {
         const optionButton = document.createElement('p');
         optionButton.classList.add('button_answer');
         optionButton.innerText = option;
-        optionButton.addEventListener('click',() => selectOption(index, optIndex));
+        optionButton.addEventListener('click', () => selectOption(index, optIndex));
         choicesContainer.appendChild(optionButton);
     });
 }
@@ -184,12 +183,28 @@ function calculateResult() {
     document.getElementById('test-result').style.display = 'flex';
     document.getElementById('result').innerText = results[resultIndex].text;
     document.getElementById('result').innerHTML += results[resultIndex].recommendations.map(rec => `<li><strong>${rec.split(':')[0]}</strong>: ${rec.split(':')[1]}</li>`).join('');
-    
+
     transitionSound.pause();
     transitionSound.style.display = 'none';
 }
 
+function closeTest() {
+    document.getElementById('test-story').style.display = 'none';
+    document.getElementById('test-result').style.display = 'none';
+    document.getElementById('intro-container').style.display = 'flex';
+    currentQuestionIndex = 0;
+    scores.fill(0);
+    transitionSound.pause();
+}
+
+function restartTest() {
+    closeTest();
+    startTest();
+}
+
 document.getElementById('button_start').addEventListener('click', startTest);
+document.getElementById('button_close').addEventListener('click', closeTest);
+document.getElementById('button_restart').addEventListener('click', restartTest);
 
 
 // Модальное окно

@@ -96,18 +96,21 @@
             <div class="wrapper">
                 <h2 class="about-us__title">О нашем центре</h2>
                 <div class="layout-2-column about-us-container">
+                    <div>
                     <p class="about-us__description">Команда психологов MINDZEN окажет Вам поддержку и
-                        реальную помощь в сложных жизненных ситуациях. Здоровое психологическое и
-                        ментальное состояние является главным аспектом для эффективной жизнедеятельности
-                        человека.
-                        Именно от него зависит Ваше самочувствие, успехи в работе или бизнесе, семье или
-                        социальной
-                        сфере. Мы гарантируем Вам: профессиональную помощь, эффективное решение проблемы и
-                        максимальное погружение в Вашу ситуацию</p>
+                        реальную помощь в сложных жизненных ситуациях.</p>
+                        <p class="about-us__description">Здоровое психологическое и
+                            ментальное состояние является главным аспектом для эффективной жизнедеятельности
+                            человека.
+                            Именно от него зависит Ваше самочувствие, успехи в работе или бизнесе, семье или
+                            социальной
+                            сфере.</p>
+                            <p class="about-us__description">Мы гарантируем Вам: профессиональную помощь, эффективное решение проблемы и
+                                максимальное погружение в Вашу ситуацию</p></div>
                     <div class="layout-3-column psychologists-container" >
                         <div class="psychologists block-shadowed" id="psychologists-1">
                             <div class="psychologists__content" >
-                                <h5 class="psychologists__name">Татьяна</h5>
+                                <h5 class="psychologists__name">Татьяна Воравко</h5>
                                 <p class="psychologists__title">Практикующий психолог</p>
                             </div>
                             <img class="psychologists__photo" src="./img/psychologists/tatyana.png" alt="Татьяна">
@@ -121,7 +124,7 @@
                                         <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
                                     </svg>
                                 </button>
-                                <h2 class="psychologists__name-modal">Татьяна</h2>
+                                <h2 class="psychologists__name-modal">Татьяна Воравко</h2>
                                 <ul>
                                     <li>Практикующий психолог</li>
                                     <li>Индивидуальное консультирование, семейное консультирование, консультирование подростков (с 12 лет)</li>
@@ -134,7 +137,7 @@
                         </div>
                         <div class="psychologists block-shadowed" id="psychologists-2">
                             <div class="psychologists__content" >
-                                <h5 class="psychologists__name">Денис</h5>
+                                <h5 class="psychologists__name">Денис Тимощенко</h5>
                                 <p class="psychologists__title">Практикующий психолог</p>
                             </div>
                             <img class="psychologists__photo" src="./img/psychologists/denis.png" alt="Денис">
@@ -148,7 +151,7 @@
                                         <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
                                     </svg>
                                 </button>
-                                <h2 class="psychologists__name-modal">Денис</h2>
+                                <h2 class="psychologists__name-modal">Денис Тимощенко</h2>
                                 <ul>
                                     <li>Практикующий психолог</li>
                                     <li>Методы работы: основное направление - КПТ (когнитивно-поведенческая терапия)</li>
@@ -161,7 +164,7 @@
                         </div>
                         <div class="psychologists block-shadowed" id="psychologists-3">
                             <div class="psychologists__content">
-                                <h5 class="psychologists__name">Виктория</h5>
+                                <h5 class="psychologists__name">Виктория Мишанина</h5>
                                 <p class="psychologists__title">Практикующий психолог</p>
                             </div>
                             <img class="psychologists__photo" src="./img/psychologists/victory.png" alt="Виктория">
@@ -175,7 +178,7 @@
                                         <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
                                     </svg>
                                 </button>
-                                <h2 class="psychologists__name-modal">Виктория</h2>
+                                <h2 class="psychologists__name-modal">Виктория Мишанина</h2>
                                 <ul>
                                     <li>Практикующий психолог</li>
                                     <li>Индивидуальное консультирование лиц с 18 лет</li>
@@ -308,11 +311,16 @@
                         <p class="test__description" id="question-counter"></p>
                         <h3 class="test__quation" id="story"></h3>
                         <div id="choices" class="test__choices"></div>
-                        <audio controls id="transition-sound" src="./audio/meditation.mp3" class="test__audio"></audio>
+                        <audio controls id="transition-sound" src="./audio/Samsara Inc. - Sunrise.mp3" class="test__audio"></audio>
+                        <button type="button" class="button button_test" id="button_close">Закрыть тест</button>
+                        
                     </div>
                     <div id="test-result" class="test__result">
                         <p class="test__description" id="result"></p>
+                        <div class="test__result-button">
                         <button type="button" class="button button_test"><a href="#contact">Записаться</a></button>
+                        <button type="button" class="button button_test" id="button_restart">Пройти тест заново</button>
+                            </div>
                     </div>
                     
                 </div>
@@ -325,8 +333,7 @@
                     <div class="contact-us__content">
                         <p class="contact-us__text">Не оставайтесь со своей проблемой наедине!
                             Вы совсем не одиноки, вместе мы справимся. </p>
-                        <p class="contact-us__text"> Просто напишите нам!
-                            Мы оперативно свяжемся с Вами!</p>
+                        <p class="contact-us__text"> Просто позвоните нам! Или оставте свои контактные данные и мы оперативно свяжемся с Вами!</p>
                         <p class="contact-us__link">
                             <span class="icon-round icon-round_white"><span class="ico ico_phone"></span></span>
                             <a href="tel:+375111111111">+375 (22) 345-00-99</a>
