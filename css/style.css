@@ -561,6 +561,8 @@ h5 {
   display: flex;
   flex-direction: column;
   transition: 0.2s;
+  align-items: center;
+  justify-content: center;
   
 }
 .button_test a {
@@ -662,6 +664,47 @@ h5 {
   height: 8px;
 }
 
+.icon-square {
+  width: 60px;
+  height: 60px;
+  border-radius: 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.ico_stress{
+  background-image: url("../img/icons/stress.png");
+  width: 32px;
+  height: 32px;
+}
+
+.ico_shake {
+  background-image: url("../img/icons/handshake.png");
+  width: 32px;
+  height: 32px;
+}
+
+.ico_heart {
+  background-image: url("../img/icons/stress-management.png");
+  width: 32px;
+  height: 32px;
+}
+
+.ico_emotional {
+  background-image: url("../img/icons/emotional-intelligence.png");
+  width: 32px;
+  height: 32px;
+}
+.help__icon {
+  margin-bottom: 30px;
+}
+@media (max-width: 550px) {
+  .help__icon {
+  margin-bottom: 15px;
+}
+}
 .wrapper {
   max-width: 1580px;
   margin: auto;
@@ -713,7 +756,6 @@ h5 {
   background-color: #000000;
   transition: all 0.5s linear;
 }
-
 
 .header__link a {
   color: #544837;
@@ -830,12 +872,12 @@ h5 {
 }
 
 .contact-us {
-  padding: 62px 0;
+  padding: 55px 0;
 }
 @media (max-width: 768px) {
   .contact-us {
     text-align: center;
-    padding: 0 0 55px;
+    padding: 25px 0;
   }
 }
 
@@ -847,9 +889,6 @@ h5 {
 
 .contact-us__title {
   margin: 0 0 17px;
-}
-.contact-us__content {
-  max-width: 520px;
 }
 @media (max-width: 768px) {
   .contact-us__content {
@@ -906,7 +945,7 @@ h5 {
   margin-bottom: 20px;
   gap: 20px;
 }
-@media (max-width: 414px) {
+@media (max-width: 575px) {
   .contact-us__line {
     flex-direction: column;
     margin-bottom: 0;
@@ -929,6 +968,12 @@ h5 {
 .promo {
   padding: 55px 0;
   overflow: hidden;
+}
+@media (max-width: 550px) {
+  .promo {
+  padding: 25px 0;
+  overflow: hidden;
+}
 }
 .promo__wrapper {
   display: flex;
@@ -969,7 +1014,8 @@ h5 {
 }
 }
 .promo__image {
-  width: 70%;
+  width: 80%;
+  transform: scaleX(-1);
 }
 .promo__text {
   max-width: 487px;
@@ -991,7 +1037,11 @@ h5 {
     margin: 0 0 30px;
   }
 }
-
+@media (max-width: 1050px) {
+  .promo__image {
+    max-width: 60%;
+  }
+}
 @media (max-width: 414px) {
   .promo__image {
     max-width: 100%;
@@ -1025,27 +1075,34 @@ h5 {
 .navigation__link a:hover {
   color: #ffffff;
 }
-
+.we-help {
+  padding: 55px 0;
+}
+@media (max-width: 550px) {
+.we-help {
+  padding: 25px 0;
+}
+}
 .we-help__wrapper {
-  padding-bottom: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (max-width: 768px) {
 .we-help__wrapper {
-  padding-bottom: 55px;
+  padding-bottom: 0px;
 }
 }
 .we-help__title {
   max-width: 462px;
-  margin: 0px 0px 55px 0;
+  margin: 0 0 30px;
 }
 @media (max-width: 768px) {
   .we-help__title {
   margin: 0 0 30px;
 }
 }
+
 .help__square {
   background-color: #ffffff;
   border-radius: 20px;
@@ -1064,15 +1121,15 @@ h5 {
   }
 }
 .help__title {
-  text-align: center;
-  margin: 15px 15px;
+  font-weight: normal;
+  margin:0;
 }
 .psy-test {
-  padding: 0 0 60px;
+  padding-bottom: 55px;
 }
 @media (max-width: 768px) {
   .psy-test {
-  padding: 0 0 55px;
+  padding-bottom: 25px;
 }
 }
 .test {
@@ -1085,6 +1142,11 @@ h5 {
   max-width: 462px;
   text-align: center;
   margin: 30px auto;
+}
+@media (max-width: 768px) {
+.test__title {
+  margin: 0 0 30px 0;
+}
 }
 .test__intro,
 .test__story,
@@ -1126,17 +1188,17 @@ h5 {
 }
 }
 .services {
-  padding: 30px 0;
+  padding: 55px 0;
   text-align: center;
 }
 @media (max-width: 768px) {
   .services {
     text-align: center;
-    padding: 0 0 25px;
+    padding: 25px 0;
   }
 }
 .services__title {
-  margin: 0 0 14px;
+  margin: 0 0 30px;
 }
 @media (max-width: 768px) {
   .services__title {
@@ -1158,7 +1220,6 @@ h5 {
 @media (max-width: 620px) {
   .services-wrapper > * {
     flex-basis: 68%;
-    
   }
 }
 .service {
@@ -1168,7 +1229,11 @@ h5 {
   background-color: #ffffff;
   min-width: 324px;
 }
-
+.service:hover .button_page-modal {
+  background: #94b7ed;
+  border-color: #94b7ed;
+  color: black;
+}
 
 @media (max-width: 768px) {
   .service {
@@ -1216,11 +1281,11 @@ h5 {
   text-align: start;
 }
 .about-us {
-  padding: 30px 0 100px 0;
+  padding: 55px 0;
 }
-@media (max-width: 414px) {
+@media (max-width: 550px) {
   .about-us {
-  padding: 0px 0 55px 0;
+  padding: 25px 0;
 }
 }
 @media (max-width: 950px) {
@@ -1240,14 +1305,16 @@ h5 {
   flex-wrap: nowrap;
   gap: 30px;
 }
-.psychologists {
+.psychologists  {
   display: flex;
-  padding: 35px;
+  padding: 20px 30px;
   position: relative;
   background-color: #ffffff;
   cursor: pointer;
 }
-
+.psychologists:hover .psychologists__button {
+  text-decoration: underline;
+}
 .psychologists__name {
   margin: 0;
 }
@@ -1262,20 +1329,29 @@ h5 {
   line-height: 1.4rem;
   margin: 0;
 }
+
 .psychologists__photo {
-  width: 98px;
-  height: 98px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   position: absolute;
   right: -32px;
   top: 20px;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
 }
-@media (max-width: 580px) {
+@media (max-width: 600px) {
   .psychologists-container {
   align-items: stretch;
 }
 }
+.psychologists__button {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.4rem;
+  color: #FEA604;
+}
+
 @media (max-width: 768px) {
   .footer__navigation{
     display: none;
@@ -1330,7 +1406,6 @@ h5 {
   }
   .burger {
     display: flex;
-    margin-left: 8px;
     transform: rotate(180px);
     transition: all 0.5s linear;
   }
